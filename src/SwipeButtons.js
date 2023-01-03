@@ -1,5 +1,5 @@
 import React from 'react'
-import "./swipeButtons.css";
+import "./SwipeButtons.css";
 import ReplayIcon from '@mui/icons-material/Replay';
 import CloseIcon from '@mui/icons-material/Close';
 import StarRateIcon from '@mui/icons-material/StarRate';
@@ -9,7 +9,7 @@ import IconButton from "@mui/material/IconButton";
 
 function SwipeButtons() {
   return (
-    <div classname="swipeButtons">
+    <div className="swipeButtons">
       <IconButton  className="swipeButtons__repeat">
         <ReplayIcon fontSize="large" />
       </IconButton>
@@ -26,7 +26,7 @@ function SwipeButtons() {
         <FlashOnIcon fontSize="large" />
       </IconButton>
     </div>
-  )
+  );
 }
 
 export default SwipeButtons;
