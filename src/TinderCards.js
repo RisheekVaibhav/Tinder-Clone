@@ -12,22 +12,6 @@ function TinderCards() {
       name: "Lavya Bhasin",
       url: "https://media.licdn.com/dms/image/D4D03AQH90UW9XnthpA/profile-displayphoto-shrink_200_200/0/1668238629520?e=1677715200&v=beta&t=Hhjx7FOzBV2BuRi4msXNQb3jpQzm2A0XF6mEIxRchX8",
     },
-    {
-      name: "Lavya Bhasin",
-      url: "https://media.licdn.com/dms/image/D4D03AQH90UW9XnthpA/profile-displayphoto-shrink_200_200/0/1668238629520?e=1677715200&v=beta&t=Hhjx7FOzBV2BuRi4msXNQb3jpQzm2A0XF6mEIxRchX8",
-    },
-    {
-      name: "Lavya Bhasin",
-      url: "https://media.licdn.com/dms/image/D4D03AQH90UW9XnthpA/profile-displayphoto-shrink_200_200/0/1668238629520?e=1677715200&v=beta&t=Hhjx7FOzBV2BuRi4msXNQb3jpQzm2A0XF6mEIxRchX8",
-    },
-    {
-      name: "Lavya Bhasin",
-      url: "https://media.licdn.com/dms/image/D4D03AQH90UW9XnthpA/profile-displayphoto-shrink_200_200/0/1668238629520?e=1677715200&v=beta&t=Hhjx7FOzBV2BuRi4msXNQb3jpQzm2A0XF6mEIxRchX8",
-    },
-    {
-      name: "Lavya Bhasin",
-      url: "https://media.licdn.com/dms/image/D4D03AQH90UW9XnthpA/profile-displayphoto-shrink_200_200/0/1668238629520?e=1677715200&v=beta&t=Hhjx7FOzBV2BuRi4msXNQb3jpQzm2A0XF6mEIxRchX8",
-    },
   ]);
   const swiped = (direction, nameToDelete) => {
     console.log("removing: " + nameToDelete);
@@ -37,7 +21,7 @@ function TinderCards() {
   };
   return (
     <div className="tinderCards">
-      <div className="div.tinderCards__cardContainers">
+    <div className="tinderCards__cardContainers">
         {people.map((person) => (
           <TinderCard
             className="swipe"
@@ -45,7 +29,14 @@ function TinderCards() {
             preventSwipe={["up", "down"]}
             onSwipe={(dir) => swiped(dir, person.name)}
             onCardLeftScreen={() => outOfFrame(person.name)}
-          ></TinderCard>
+          >
+            <div
+              style={{ backgroundImage: `url(${person.url})`}}
+              className="card"
+            >
+              <h3>{person.name}</h3>
+            </div>
+          </TinderCard>
         ))}
       </div>
     </div>
